@@ -13,18 +13,16 @@ return [0, 1].
 
 
 def twoSum(nums: list, target: int) -> list:
-    m = {}
     for (i, v) in enumerate(nums):
         want = target - v
-        if want in m.keys():
-            return [m[want], i]
-        else:
-            m[v] = i
+        if want in nums[i+1:]:
+            return [i, nums.index(want, i + 1)]
 
 
-print(twoSum([2, 7, 11, 15], 9))
-print(twoSum([3, 2, 4], 6) )
+print(twoSum([3, 2, 4], 6))
+print(twoSum([3, 3], 6))
 """
-两个for循环也可以，但是没有这个时间复杂度上好一点
-优化：使用nums.index查找第二个元素序号
+1. 两个for循环也可以，但是没有这个时间复杂度上好一点
+2. 使用map查找 82ms
+3. 使用index查找 856ms
 """

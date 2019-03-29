@@ -48,4 +48,5 @@ print(s.lengthOfLongestSubstring("pwwkew"))
 
 """
 1. 使用双循环遍历，在for结束时处理一下最后一个字段问题
+2. 使用find/index一类辅助第二个for循环
 """
